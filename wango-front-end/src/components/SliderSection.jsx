@@ -1,6 +1,7 @@
 import React from "react";
 import CitySelector from "./CitySelector";
 import ParkingSelector from "./ParkingSelector";
+import StyledButton from "./StyledButton";
 
 const SliderSection = () => {
   return (
@@ -39,9 +40,7 @@ const SliderSection = () => {
                     </div>
                     <div className="form-group col-lg-3">
                       <div className="btn-box">
-                        <button type="submit" className="btn ">
-                          pay with Wango
-                        </button>
+                        <StyledButton />
                       </div>
                     </div>
                   </div>

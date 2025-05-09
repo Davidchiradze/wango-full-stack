@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CityProvider } from "./context/CityContext";
+import ParkingSession from "./components/ParkingSession";
 
 // wangotask123
 function App() {
@@ -35,6 +36,10 @@ function App() {
       </Route>
       <Route path="/signup">
         <SignUp />
+      </Route>
+
+      <Route path="/parking-session/:id">
+        <ParkingSession />
       </Route>
     </>
   );

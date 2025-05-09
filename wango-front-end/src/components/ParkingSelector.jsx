@@ -4,7 +4,6 @@ import { useCity } from "../context/CityContext";
 const ParkingSelector = () => {
   const { parkingSpaces, setSelectedParkingSpace, selectedParkingSpace } =
     useCity();
-  console.log("🚀 ~ ParkingSelector ~ parkingSpaces:", parkingSpaces);
 
   const handleSelectChange = (e) => {
     setSelectedParkingSpace(e.target.value);
