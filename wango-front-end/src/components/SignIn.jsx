@@ -51,8 +51,10 @@ const SignIn = () => {
                     required
                   />
                 </div>
-                <div>
-                  don't have an account? <Link to="/signup">Sign up</Link>
+                <div className="form-group mb-3">
+                  <p>
+                    Don't have an account? <Link to="/signup">Sign up</Link>
+                  </p>
                 </div>
                 <button type="submit" className="btn btn-primary w-100">
                   Sign In

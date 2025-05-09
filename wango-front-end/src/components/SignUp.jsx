@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import signUp from "../API/signUp";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -76,6 +76,11 @@ const SignUp = () => {
                     onChange={(e) => setPlateNumber(e.target.value)}
                     required
                   />
+                </div>
+                <div className="form-group mb-3">
+                  <p>
+                    Already have an account? <Link to="/signin">Login</Link>
+                  </p>
                 </div>
 
                 <button type="submit" className="btn btn-primary w-100">
