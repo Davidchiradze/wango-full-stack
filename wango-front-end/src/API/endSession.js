@@ -5,7 +5,7 @@ const endSession = async (id) => {
     `http://localhost:9000/cities/parking-session/end`,
     {
       method: "POST",
-      body: JSON.stringify({ id, endDate: moment().format("HH:mm") }),
+      body: JSON.stringify({ id, endDate: new Date().toISOString() }),
       headers: {
         "Content-Type": "application/json",
       },

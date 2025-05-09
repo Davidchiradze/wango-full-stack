@@ -6,7 +6,7 @@ const startParkingSession = async (selectedParkingSpace, userId) => {
     body: JSON.stringify({
       userId: userId,
       parkingId: selectedParkingSpace,
-      startTime: moment().format("HH:mm"), // 24-hour format
+      startTime: new Date().toISOString(),
     }),
     headers: {
       "Content-Type": "application/json",
