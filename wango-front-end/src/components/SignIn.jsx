@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import signIn from "../API/signIn";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -50,6 +50,9 @@ const SignIn = () => {
                     onChange={(e) => setPlateNumber(e.target.value)}
                     required
                   />
+                </div>
+                <div>
+                  don't have an account? <Link to="/signup">Sign up</Link>
                 </div>
                 <button type="submit" className="btn btn-primary w-100">
                   Sign In
