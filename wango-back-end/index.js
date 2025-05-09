@@ -2,6 +2,7 @@ import express from "express";
 const app = express();
 const port = 9000;
 import authRoute from "./routes/auth.route.js";
+import citiesRoute from "./routes/cities.route.js";
 import cors from "cors";
 
 app.use(cors());
@@ -10,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/auth", authRoute);
+app.use("/cities", citiesRoute);
 app.get("/", (req, res) => {
   res.send("Hello World! Welcome to my Express app");
 });

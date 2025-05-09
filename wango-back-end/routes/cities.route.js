@@ -2,10 +2,10 @@ import express from "express";
 import {
   getCities,
   getCityParkingSpaces,
-} from "../controllers/cities.controller";
+} from "../controllers/cities.controller.js";
 const router = express.Router();
 
 // router.post("/login", login);
-router.get("/cities", getCities);
-router.get("/parking-spaces", getCityParkingSpaces);
+router.get("/", getCities);
+router.get("/parking-spaces/:cityId", getCityParkingSpaces);
 export default router;

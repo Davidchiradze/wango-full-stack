@@ -4,7 +4,7 @@ export const getCities = async (req, res) => {
   const { data, error } = await supabase.from("cities").select("*");
 
   if (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 
   res.status(200).json({ message: "Cities fetched", status: "success", data });
@@ -13,12 +13,12 @@ export const getCities = async (req, res) => {
 export const getCityParkingSpaces = async (req, res) => {
   const { cityId } = req.params;
   const { data, error } = await supabase
-    .from("parking_spaces")
+    .from("parking-space")
     .select("*")
     .eq("cityId", cityId);
 
   if (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 
   res

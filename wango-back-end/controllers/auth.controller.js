@@ -3,18 +3,24 @@ import supabase from "../utils/supabase.js";
 export const signUp = async (req, res) => {
   const { email, address, fullName, plateNumber } = req.body;
 
-  const { data, error } = await supabase.from("users").insert({
-    email,
-    address,
-    fullName,
-    plateNumber,
-  });
+  const { data, error } = await supabase
+    .from("users")
+    .insert({
+      email,
+      address,
+      fullName,
+      plateNumber,
+    })
+    .select("*")
+    .single();
 
   if (error) {
     res.status(500).json({ error: error.message });
   }
 
-  res.status(200).json({ message: "Sign Up", status: "success" });
+  res
+    .status(200)
+    .json({ message: "Sign Up", status: "success", userId: data.id });
 };
 
 export const login = async (req, res) => {
@@ -33,5 +39,7 @@ export const login = async (req, res) => {
     res.status(404).json({ error: "User not found" });
   }
 
-  res.status(200).json({ message: "User found", status: "success" });
+  res
+    .status(200)
+    .json({ message: "User found", status: "success", userId: data.id });
 };

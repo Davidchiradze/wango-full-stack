@@ -9,23 +9,26 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { CityProvider } from "./context/CityContext";
 
 // wangotask123
 function App() {
   const history = useHistory();
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const userId = localStorage.getItem("userId");
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (!userId) {
       history.push("/signin");
     }
-  }, [isLoggedIn, history]);
+  }, [userId, history]);
   return (
     <>
       <Route exact path="/">
-        <div className="hero_area">
-          <Header />
-          <SliderSection />
-        </div>
+        <CityProvider>
+          <div className="hero_area">
+            <Header />
+            <SliderSection />
+          </div>
+        </CityProvider>
       </Route>
       <Route path="/signin">
         <SignIn />

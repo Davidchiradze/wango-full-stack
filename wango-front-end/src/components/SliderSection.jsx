@@ -1,4 +1,6 @@
 import React from "react";
+import CitySelector from "./CitySelector";
+import ParkingSelector from "./ParkingSelector";
 
 const SliderSection = () => {
   return (
@@ -30,22 +32,10 @@ const SliderSection = () => {
                       /> */}
                     </div>
                     <div className="form-group col-lg-3">
-                      <select
-                        name=""
-                        className="form-control wide"
-                        id="inputCities"
-                      >
-                        <option>Choose city</option>
-                      </select>
+                      <CitySelector />
                     </div>
                     <div className="form-group col-lg-3">
-                      <select
-                        name=""
-                        className="form-control wide"
-                        id="inputParkingAreas"
-                      >
-                        <option>Choose parking area</option>
-                      </select>
+                      <ParkingSelector />
                     </div>
                     <div className="form-group col-lg-3">
                       <div className="btn-box">

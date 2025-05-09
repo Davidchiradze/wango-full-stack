@@ -14,7 +14,7 @@ const SignUp = () => {
 
     const data = await signUp(name, email, plateNumber, address);
     if (data.status === "success") {
-      localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem("userId", data.userId);
       history.push("/");
     }
   };

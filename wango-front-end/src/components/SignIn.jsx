@@ -10,9 +10,8 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await signIn(email, plateNumber);
-    console.log("Sign In Data:", data);
     if (data.status === "success") {
-      localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem("userId", data.userId);
       history.push("/");
     }
     // Add your authentication logic here
