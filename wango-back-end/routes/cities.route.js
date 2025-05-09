@@ -13,5 +13,5 @@ router.get("/", getCities);
 router.get("/parking-spaces/:cityId", getCityParkingSpaces);
 router.post("/new-session", newSession);
 router.get("/parking-session/:id", getSession);
-router.get("/parking-session/:id/end", endSession);
+router.post("/parking-session/end", endSession);
 export default router;

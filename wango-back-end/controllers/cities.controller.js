@@ -59,13 +59,15 @@ export const getSession = async (req, res) => {
 };
 
 export const endSession = async (req, res) => {
-  const { id } = req.params;
+  const { id, endDate } = req.body;
   const { data, error } = await supabase
     .from("parking-sessions")
-    .update({ endDate: new Date().toISOString() })
+    .update({ endDate: endDate })
     .eq("id", id)
     .select("*, parking-space(*, parking-prices(*))")
     .single();
+
+  console.log("🚀 ~ endSession ~ data:", data);
 
   if (error) {
     return res.status(500).json({ error: error.message });
