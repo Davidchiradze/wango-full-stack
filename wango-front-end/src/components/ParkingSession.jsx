@@ -61,7 +61,7 @@ const ParkingSession = () => {
       )}
 
       <p>Elapsed Time: {elapsedTime}</p>
-      {isFinished && <p>Total Cost: {session.price}</p>}
+      {isFinished && <p>Total Cost: {session.price}$</p>}
       {!isFinished && <button onClick={handleEndSession}>End Session</button>}
     </div>
   );
